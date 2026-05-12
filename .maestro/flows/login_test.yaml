@@ -1,0 +1,30 @@
+appId: ${APP_ID}
+name: Login - valid user can access product catalogue
+tags:
+  - smoke
+  - regression
+  - login
+---
+# Launch app and wait for stable home screen
+- runFlow: ../pages/launch_app.yaml
+
+# Navigate to login screen via reusable navigation flow
+- runFlow:
+    file: ../pages/nav_menu.yaml
+    env:
+      target_item: ${LOGIN_MENU_ITEM}
+
+# Verify login screen before entering credentials
+- assertVisible: "Login"
+
+# Submit valid credentials using reusable login flow
+- runFlow:
+    file: ../pages/login_page.yaml
+    env:
+      username: ${VALID_USERNAME}
+      password: ${VALID_PASSWORD}
+
+# Wait for product catalogue to load
+- extendedWaitUntil:
+    visible: "Products"
+    timeout: 10000

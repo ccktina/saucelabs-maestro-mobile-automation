@@ -1,0 +1,12 @@
+appId: ${APP_ID}
+---
+# Enter credentials
+- tapOn: "Username input field"
+- inputText: ${username}
+
+- tapOn: "Password input field"
+- inputText: ${password}
+- hideKeyboard
+
+# Submit login form
+- tapOn: "Login button"

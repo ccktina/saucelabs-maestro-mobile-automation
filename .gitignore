@@ -1,0 +1,6 @@
+# --- Maestro Specifics ---
+maestro-report/
+maestro-results/
+*.mp4
+*.png
+*.log

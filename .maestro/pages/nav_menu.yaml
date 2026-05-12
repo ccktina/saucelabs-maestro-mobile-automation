@@ -1,0 +1,7 @@
+appId: ${APP_ID}
+---
+# Open navigation menu
+- tapOn: "open menu"
+
+# Select target menu item passed from parent flow
+- tapOn: ${target_item}
